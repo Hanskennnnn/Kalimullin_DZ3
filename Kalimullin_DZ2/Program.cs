@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Kalimullin_DZ2
 {
@@ -11,10 +7,10 @@ namespace Kalimullin_DZ2
     {
         static void Main(string[] args)
         {
-            //Task1();
-            //Task2();
-            //Task3();
-            //Task4();
+            Task1();
+            Task2();
+            Task3();
+            Task4();
             Task5();
         }
 
@@ -24,7 +20,7 @@ namespace Kalimullin_DZ2
             Console.WriteLine("Задание 1");
             int[] numbers = new int[10];
 
-            // Запрос ввода последовательности
+        
             Console.WriteLine("Введите последовательность из 10 чисел:");
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -52,8 +48,13 @@ namespace Kalimullin_DZ2
             Console.WriteLine("Введите номер карты (от 6 до 14):");
             try
             {
-                int k = int.Parse(Console.ReadLine());
-                // Проверка диапазона
+                int k = 0;
+                while (!int.TryParse(Console.ReadLine(), out k) || k<6 || k>14)
+                {
+                    Console.WriteLine("Ошибка ввода.Введите правильный номер карты.");
+                }
+                
+               
                 if (k < 6 || k > 14)
                 {
                     throw new ArgumentOutOfRangeException("Номер карты должен быть в диапазоне от 6 до 14.");

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DZ_Tumakov
 {
@@ -20,25 +16,26 @@ namespace DZ_Tumakov
             int year;
 
      
-            Console.Write("Введите номер дня в году (от 1 до 365): ");
+            Console.Write("Введите номер дня в году (от 1 до 366): ");
+
             while (!int.TryParse(Console.ReadLine(), out dayOfYear) || dayOfYear < 1 || dayOfYear > 365)
             {
-                Console.WriteLine("Ошибка: Введите корректное число от 1 до 365.");
-                Console.Write("Введите номер дня в году (от 1 до 365): ");
+                Console.WriteLine("Ошибка: Введите корректное число от 1 до 366.");
+                Console.Write("Введите номер дня в году (от 1 до 366): ");
             }
 
            
             Console.Write("Введите год: ");
             while (!int.TryParse(Console.ReadLine(), out year) || year <= 0)
             {
-                Console.WriteLine("Ошибка: Введите корректный год (положительное целое число).");
-                Console.Write("Введите год: ");
+                Console.WriteLine("Ошибка: Введите корректный год (положительное целое число).");               
             }
-            
-            bool isLeapYear = IsLeapYear(year);
-
-            
+            bool isLeapYear = IsLeapYear(year);     
             string date = ConvertDayToDate(dayOfYear, isLeapYear);
+            if(dayOfYear==366)
+            {
+                Console.WriteLine("");
+            }
             Console.WriteLine($"День {dayOfYear} соответствует дате: {date}");
         }
 
