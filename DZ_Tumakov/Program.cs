@@ -18,7 +18,7 @@ namespace DZ_Tumakov
      
             Console.Write("Введите номер дня в году (от 1 до 366): ");
 
-            while (!int.TryParse(Console.ReadLine(), out dayOfYear) || dayOfYear < 1 || dayOfYear > 365)
+            while (!int.TryParse(Console.ReadLine(), out dayOfYear) || dayOfYear < 1 || dayOfYear > 366)
             {
                 Console.WriteLine("Ошибка: Введите корректное число от 1 до 366.");
                 Console.Write("Введите номер дня в году (от 1 до 366): ");
